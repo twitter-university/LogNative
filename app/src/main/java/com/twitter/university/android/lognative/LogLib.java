@@ -8,7 +8,7 @@ public class LogLib {
         Log.println(priority, tag, msg);
     }
 
-    public static void logN(int priority, String tag, String msg) {
-        throw new UnsupportedOperationException("Implement me as a native method!");
-    }
+    public native static void logN(int priority, String tag, String msg);
+
+    static { System.loadLibrary("logLib"); }
 }
