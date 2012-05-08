@@ -42,7 +42,7 @@ public class LogActivity extends Activity implements OnClickListener {
             int priority = LOG_LEVEL[priorityPosition];
             String tag = this.tag.getText().toString();
             String msg = this.msg.getText().toString();
-            LogLib.logJ(priority, tag, msg);
+            LogLib.logN(priority, tag, msg);
             this.tag.getText().clear();
             this.msg.getText().clear();
             Toast.makeText(this, R.string.log_success, Toast.LENGTH_SHORT).show();
