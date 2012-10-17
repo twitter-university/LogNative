@@ -30,6 +30,29 @@
         android:ems="10"
         android:hint="@string/log_msg_hint" />
 
+    <RadioGroup
+        android:id="@+id/type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/type_log_j"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/logJ" />
+
+        <RadioButton
+            android:id="@+id/type_log_n"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/logN" />
+    </RadioGroup>
+
     <Button
         android:id="@+id/log_button"
         android:layout_width="match_parent"
