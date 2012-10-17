@@ -20,8 +20,12 @@ JNIEXPORT void JNICALL Java_com_marakana_android_lognative_LogLib_logN
 		ThrowExceptionByClassName(env, "java/lang/IllegalArgumentException", "Invalid priority");
 	} else if (tag == NULL) {
 		ThrowExceptionByClassName(env, "java/lang/NullPointerException", "Tag must not be null");
+	} else if ((*env)->GetStringLength(env, tag) == 0) {
+		ThrowExceptionByClassName(env, "java/lang/IllegalArgumentException", "Tag must not be empty");
 	} else if (msg == NULL) {
 		ThrowExceptionByClassName(env, "java/lang/NullPointerException", "Msg must not be null");
+	} else if ((*env)->GetStringLength(env, msg) == 0) {
+		ThrowExceptionByClassName(env, "java/lang/IllegalArgumentException", "Msg must not be empty");
 	} else {
 		const char *cTag = (*env)->GetStringUTFChars(env, tag, NULL);
 		if (cTag) {
