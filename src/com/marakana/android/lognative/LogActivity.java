@@ -17,6 +17,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 public class LogActivity extends Activity implements OnClickListener {
+    private static final String TAG = "LogActivity";
+
     private static final int[] LOG_LEVEL = {
             Log.VERBOSE, Log.DEBUG, Log.DEBUG, Log.WARN, Log.ERROR
     };
@@ -66,18 +68,23 @@ public class LogActivity extends Activity implements OnClickListener {
     }
 
     private void log(int priority, String tag, String msg) {
-        switch (this.type.getCheckedRadioButtonId()) {
-            case R.id.type_log_j:
-                LogLib.logJ(priority, tag, msg);
-                break;
-            case R.id.type_log_n:
-                LogLib.logN(priority, tag, msg);
-                break;
-            default:
-                return;
+        try {
+            switch (this.type.getCheckedRadioButtonId()) {
+                case R.id.type_log_j:
+                    LogLib.logJ(priority, tag, msg);
+                    break;
+                case R.id.type_log_n:
+                    LogLib.logN(priority, tag, msg);
+                    break;
+                default:
+                    return;
+            }
+            this.tag.getText().clear();
+            this.msg.getText().clear();
+            Toast.makeText(this, R.string.log_success, Toast.LENGTH_SHORT).show();
+        } catch (RuntimeException e) {
+            Toast.makeText(this, R.string.log_error, Toast.LENGTH_SHORT).show();
+            Log.wtf(TAG, "Failed to log the message", e);
         }
-        this.tag.getText().clear();
-        this.msg.getText().clear();
-        Toast.makeText(this, R.string.log_success, Toast.LENGTH_SHORT).show();
     }
 }

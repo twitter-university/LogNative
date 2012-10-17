@@ -10,6 +10,7 @@
     <string name="log_tag_hint">Your log entry tag</string>
     <string name="log_msg_hint">Your log entry message</string>
     <string name="log_success">Logged your message</string>
+    <string name="log_error">Failed to log your message</string>
 
     <string-array name="log_level_labels">
         <item>Verbose</item>
