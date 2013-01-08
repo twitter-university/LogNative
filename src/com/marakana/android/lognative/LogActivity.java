@@ -52,7 +52,7 @@ public class LogActivity extends Activity implements OnClickListener {
             final int priority = LOG_LEVEL[priorityPosition];
             final String tag = this.tag.getText().toString();
             final String msg = this.msg.getText().toString();
-            if (TextUtils.isEmpty(msg) || TextUtils.isEmpty(msg)) {
+            if (TextUtils.isEmpty(tag) || TextUtils.isEmpty(msg)) {
                 new AlertDialog.Builder(this)
                         .setMessage(R.string.log_tag_errors)
                         .setPositiveButton(android.R.string.yes,
