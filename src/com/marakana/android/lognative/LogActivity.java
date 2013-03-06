@@ -79,8 +79,8 @@ public class LogActivity extends Activity implements OnClickListener {
                 default:
                     return;
             }
-            this.tag.getText().clear();
-            this.msg.getText().clear();
+//            this.tag.getText().clear();
+//            this.msg.getText().clear();
             Toast.makeText(this, R.string.log_success, Toast.LENGTH_SHORT).show();
         } catch (RuntimeException e) {
             Toast.makeText(this, R.string.log_error, Toast.LENGTH_SHORT).show();
