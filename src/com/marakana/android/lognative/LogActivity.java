@@ -20,7 +20,7 @@ public class LogActivity extends Activity implements OnClickListener {
     private static final String TAG = "LogActivity";
 
     private static final int[] LOG_LEVEL = {
-            Log.VERBOSE, Log.DEBUG, Log.DEBUG, Log.WARN, Log.ERROR
+            Log.VERBOSE, Log.DEBUG, Log.INFO, Log.WARN, Log.ERROR
     };
 
     private Spinner priority;
