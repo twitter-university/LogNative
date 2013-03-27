@@ -20,7 +20,7 @@ public class LogActivity extends Activity implements OnClickListener {
     private static final String TAG = "LogActivity";
 
     private static final int[] LOG_LEVEL = {
-            Log.VERBOSE, Log.DEBUG, Log.DEBUG, Log.WARN, Log.ERROR
+            Log.VERBOSE, Log.DEBUG, Log.INFO, Log.WARN, Log.ERROR
     };
 
     private Spinner priority;
@@ -79,8 +79,8 @@ public class LogActivity extends Activity implements OnClickListener {
                 default:
                     return;
             }
-            this.tag.getText().clear();
-            this.msg.getText().clear();
+//            this.tag.getText().clear();
+//            this.msg.getText().clear();
             Toast.makeText(this, R.string.log_success, Toast.LENGTH_SHORT).show();
         } catch (RuntimeException e) {
             Toast.makeText(this, R.string.log_error, Toast.LENGTH_SHORT).show();
