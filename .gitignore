@@ -1,16 +1,15 @@
-# built application files
-*.apk
-*.ap_
+# OSX litter
+.DS_*
 
-# files for the dex VM
-*.dex
+# caches
+/.gradle
 
-# Java class files
-*.class
+# idea config
+/.idea
+/*.iml
 
 # generated files
-bin/
-gen/
+/build
 
 # Local configuration file (sdk path, etc)
 local.properties

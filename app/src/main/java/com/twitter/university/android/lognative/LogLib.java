@@ -1,5 +1,5 @@
 
-package com.marakana.android.lognative;
+package com.twitter.university.android.lognative;
 
 import android.util.Log;
 
