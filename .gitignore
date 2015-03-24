@@ -5,8 +5,8 @@
 /.gradle
 
 # idea config
-/.idea
-/*.iml
+.idea
+*.iml
 
 # generated files
 /build
